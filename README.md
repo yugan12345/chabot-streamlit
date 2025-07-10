@@ -1,54 +1,57 @@
-# 🤖 Chatbot with RAG, FAISS, and Web Scraping
+# 🤖 RAG-based Chatbot with FAISS and Web-Scraped Knowledge Base
 
-[![🔗 Live Demo](https://chabot-app-bsrraf2efxzxgimpsngbmd.streamlit.app/)
+[![🔗 Live Demo](https://img.shields.io/badge/🧪%20Try%20the%20Chatbot-Demo-blue?style=for-the-badge)](https://chabot-app-bsrraf2efxzxgimpsngbmd.streamlit.app/)
 
-Welcome to the official repository of our **Retrieval-Augmented Generation (RAG)**-based chatbot! This chatbot is designed to provide intelligent, context-aware responses using a hybrid approach of vector-based retrieval and large language models.
+Welcome to the repository of a powerful chatbot that combines **Retrieval-Augmented Generation (RAG)** with **FAISS** for intelligent, domain-specific conversations.  
+All knowledge was gathered through **web scraping using Selenium**, indexed using FAISS, and served through an interactive **Streamlit** interface.
 
 ---
 
 ## 🚀 Features
 
-- 🔍 **Retrieval-Augmented Generation (RAG)** for accurate, contextually aware answers  
-- 🧠 **FAISS** for fast and efficient vector similarity search  
-- 🌐 **Web Scraping with Selenium** to build the knowledge base dynamically  
-- 📁 Automatically builds dataset from live web pages  
-- 💬 Interactive interface for real-time Q&A
+- 🧠 **Retrieval-Augmented Generation (RAG)** for contextual and grounded answers  
+- ⚡ **FAISS** for lightning-fast semantic search over embeddings  
+- 🌐 **Static knowledge base** extracted via **Selenium-based web scraping**  
+- 💬 Smooth and responsive chatbot interface powered by **Streamlit**  
+- 🔒 Fully self-contained and offline-compatible after scraping
 
 ---
 
-## 📸 Demo Preview
+## 📸 Live Demo
 
-Click the button above to explore the working demo of the chatbot and see it in action!  
-> ⚡ Ask questions from a domain-specific dataset that was scraped, processed, and indexed using FAISS.
+Click below to chat with the bot in real-time:
+
+👉 [**Try the Chatbot**](https://chabot-app-bsrraf2efxzxgimpsngbmd.streamlit.app/)
+
+> Ask questions about the domain-specific dataset gathered from the web and see how the RAG pipeline responds with precise, context-aware answers.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Tool/Library     | Purpose                                      |
-|------------------|----------------------------------------------|
-| **RAG**          | Core framework for combining search & LLMs   |
-| **FAISS**        | Efficient similarity search over embeddings  |
-| **Selenium**     | Web scraping to gather training documents    |
-| **BeautifulSoup**| HTML parsing and data cleaning               |
-| **OpenAI / LLM** | For generating responses based on context    |
-| **Streamlit/Gradio** | Frontend interface for chatbot (if any) |
+| Tool / Framework   | Purpose                                                |
+|--------------------|--------------------------------------------------------|
+| **RAG**            | Retrieval + Generation for factual response synthesis |
+| **FAISS**          | Efficient vector search engine                         |
+| **Selenium**       | Automates browser-based web scraping                   |
+| **BeautifulSoup**  | Cleans and parses HTML content                         |
+| **OpenAI / LLM**   | Generates final responses from retrieved context       |
+| **Streamlit**      | Builds a clean and responsive UI for chatbot           |
 
 ---
 
-## 🧱 How It Works
+## 🧱 Workflow
 
-1. **Data Collection:**  
-   Using **Selenium** to scrape relevant pages from the web.
+1. **Web Scraping:**  
+   - Used **Selenium** to scrape static data from selected websites.  
+   - Cleaned and processed text using **BeautifulSoup**.
 
-2. **Text Cleaning & Processing:**  
-   Extract raw text using BeautifulSoup, then chunk and embed it.
+2. **Embedding + Indexing:**  
+   - Converted documents to vector embeddings.  
+   - Stored them in a **FAISS** index for fast retrieval.
 
-3. **Indexing with FAISS:**  
-   Text chunks are converted into embeddings and stored in a FAISS index.
-
-4. **RAG Pipeline:**  
-   On each query, relevant documents are retrieved and passed to the language model for generating answers.
+3. **Chatbot Flow:**  
+   - User inputs query → FAISS retrieves top-k similar chunks → LLM generates a final answer using the context.
 
 ---
 
